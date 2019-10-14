@@ -134,20 +134,27 @@ for (inputOne, inputTwo, expectedOutput) in testCasesFour {
 // Your function here
 
 func secondSmallestValue(in array:[Int]) -> Int {
-    var smallestValue = 0
-    var secondSmallestValue = 0
-    for num in array {
-        if num < smallestValue {
-            smallestValue = num
-        }
-       
-    }
-    for num in array{
-        if num > smallestValue{
-            secondSmallestValue = num
-        }
-    }
-    return secondSmallestValue
+    
+    
+    let newArray =  array.sorted()
+    return newArray[1]
+    
+    //attempt with two transverses to find smallest value
+    
+//    var smallestValue = 0
+//    var secondSmallestValue = 0
+//    for num in array {
+//        if num < smallestValue {
+//            smallestValue = num
+//        }
+//
+//    }
+//    for _ in array{
+//        if smallestValue < secondSmallestValue {
+//            secondSmallestValue = smallestValue
+//        }
+//    }
+//    return secondSmallestValue
 }
 
 let testCasesFive = [
