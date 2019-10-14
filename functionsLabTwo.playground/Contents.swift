@@ -6,6 +6,16 @@ import UIKit
 
 // Your function here
 
+func average(of array: [Double]) -> Double {
+    var sum:Double = 0
+    let numOfElements = Double(array.count)
+    for num in array {
+        sum += num
+    }
+    let average = sum / numOfElements
+    return average
+}
+
 let testCasesOne: [([Double], Double)] = [
     (input: [1,2,3,4,5], expectedOutput: 3),
     (input: [1,42,1,541,42,6], expectedOutput: 105.5),
@@ -13,10 +23,10 @@ let testCasesOne: [([Double], Double)] = [
     (input: [1.5, 2.25, 4.5, -1.5], expectedOutput: 1.6875),
 ]
 
-//for (input, expectedOutput) in testCasesOne {
-//    let output = average(of: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesOne {
+    let output = average(of: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 // Question Two
 
@@ -24,16 +34,25 @@ let testCasesOne: [([Double], Double)] = [
 
 // Your function here
 
+func frequencyDictionary(of string: String) -> [Character:Int]{
+    var dictionary: [Character:Int] = [:]
+    for char in string {
+        dictionary[char] = (dictionary[char] ?? 0) + 1
+    }
+    
+    return dictionary
+}
+
 let testCasesTwo: [(String, [Character: Int])] = [
     (input: "hello", expectedOutput: ["h": 1, "e": 1, "l": 2, "o": 1]),
     (input: "aaaaaAAA", expectedOutput: ["a": 5, "A":3]),
     (input: "More words", expectedOutput: ["M": 1, "o": 2, "r": 2, "e": 1, " ": 1, "w": 1, "d": 1, "s": 1])
 ]
 
-//for (input, expectedOutput) in testCasesTwo {
-//    let output = frequencyDictionary(of: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesTwo {
+    let output = frequencyDictionary(of: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 
 // Question Three
